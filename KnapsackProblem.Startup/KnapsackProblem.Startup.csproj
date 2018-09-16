@@ -45,8 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Chromosome\Chromosome.cs" />
     <Compile Include="Core\Gene\GreedyGene.cs" />
     <Compile Include="Core\Gene\IGene.cs" />
+    <Compile Include="Core\Operations\IFitness.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
