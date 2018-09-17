@@ -46,7 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Chromosome.cs" />
-    <Compile Include="Core\Evolution\Operation\IOperation.cs" />
+    <Compile Include="Core\Evolution\Operation\ISpliceOperator.cs" />
+    <Compile Include="Core\Evolution\Operation\SimpleSpliceOperator.cs" />
     <Compile Include="Core\Gene\GreedyGene.cs" />
     <Compile Include="Core\Gene\IGene.cs" />
     <Compile Include="Core\Evolution\Fitness\IFitness.cs" />
