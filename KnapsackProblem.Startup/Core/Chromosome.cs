@@ -6,12 +6,6 @@ namespace KnapsackProblem.Startup.Core
 {
     public class Chromosome
     {
-        #region Private Fields
-
-        private readonly IFitness _fitness;
-
-        #endregion
-
         #region Properties
 
         /// <summary>
