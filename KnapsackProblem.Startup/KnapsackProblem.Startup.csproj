@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Gene\IContent.cs" />
+    <Compile Include="Core\Gene\IGene.cs" />
     <Compile Include="Core\Gene\KnapsackContent.cs" />
+    <Compile Include="Core\Gene\SimpleGene.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
