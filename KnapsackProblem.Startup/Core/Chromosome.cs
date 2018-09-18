@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using KnapsackProblem.Startup.Core.Evolution.Gene;
 
 namespace KnapsackProblem.Startup.Core
@@ -10,7 +11,7 @@ namespace KnapsackProblem.Startup.Core
         /// <summary>
         /// The gene string.
         /// </summary>
-        public IEnumerable<IGene> Genes { get; }
+        public List<IGene> Genes { get; }
 
         #endregion
 
@@ -22,7 +23,7 @@ namespace KnapsackProblem.Startup.Core
         /// <param name="genes">The gene string.</param>
         public Chromosome(IEnumerable<IGene> genes)
         {
-            Genes = genes;
+            Genes = genes.ToList();
         }
 
         #endregion
