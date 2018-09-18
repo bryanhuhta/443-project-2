@@ -45,12 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Chromosome.cs" />
-    <Compile Include="Core\Evolution\Operation\ISpliceOperator.cs" />
-    <Compile Include="Core\Evolution\Operation\SimpleSpliceOperator.cs" />
-    <Compile Include="Core\Gene\GreedyGene.cs" />
-    <Compile Include="Core\Gene\IGene.cs" />
-    <Compile Include="Core\Evolution\Fitness\IFitness.cs" />
+    <Compile Include="Core\Gene\IContent.cs" />
+    <Compile Include="Core\Gene\KnapsackContent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,34 +1,34 @@
 ﻿namespace KnapsackProblem.Startup.Core.Gene
 {
-    public class GreedyGene : IGene
+    public class KnapsackContent : IContent
     {
         #region Properties
 
         /// <summary>
-        /// The value of GreedyGene.
+        /// The content value.
         /// </summary>
-        public double Value => Profit / Weight;
+        public double Value => Weight / Profit;
 
         /// <summary>
-        /// The weight of GreedyGene.
+        /// The content weight.
         /// </summary>
         public double Weight { get; }
 
         /// <summary>
-        /// The profit of GreedyGene.
+        /// The content profit.
         /// </summary>
         public double Profit { get; }
 
         #endregion
 
         #region Constructors
-        
+
         /// <summary>
-        /// The default constructor.
+        /// Creates a KnapsackContent instance.
         /// </summary>
-        /// <param name="weight">The weight of the gene (default is 1).</param>
-        /// <param name="profit">The profit of the gene (default is 1).</param>
-        public GreedyGene(double weight = 1, double profit = 1)
+        /// <param name="weight">The content weight.</param>
+        /// <param name="profit">The content profit.</param>
+        public KnapsackContent(double weight, double profit)
         {
             Weight = weight;
             Profit = profit;

@@ -1,6 +1,6 @@
 ﻿namespace KnapsackProblem.Startup.Core.Gene
 {
-    public interface IGene
+    public interface IContent
     {
         double Value { get; }
     }
