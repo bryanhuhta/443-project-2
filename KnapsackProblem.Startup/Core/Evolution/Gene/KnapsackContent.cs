@@ -1,4 +1,4 @@
-﻿namespace KnapsackProblem.Startup.Core.Gene
+﻿namespace KnapsackProblem.Startup.Core.Evolution.Gene
 {
     public class KnapsackContent : IContent
     {
