@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Core\Chromosome.cs" />
     <Compile Include="Core\Gene.cs" />
+    <Compile Include="Core\Knapsack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
