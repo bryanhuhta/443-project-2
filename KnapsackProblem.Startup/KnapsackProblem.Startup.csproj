@@ -45,9 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Chromosome.cs" />
-    <Compile Include="Core\Gene.cs" />
-    <Compile Include="Core\Knapsack.cs" />
+    <Compile Include="Core\Genetic\Chromosome.cs" />
+    <Compile Include="Core\Genetic\Gene.cs" />
+    <Compile Include="Core\Genetic\Knapsack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

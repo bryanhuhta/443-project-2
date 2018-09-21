@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KnapsackProblem.Startup.Core
+namespace KnapsackProblem.Startup.Core.Genetic
 {
     public class Chromosome
     {
