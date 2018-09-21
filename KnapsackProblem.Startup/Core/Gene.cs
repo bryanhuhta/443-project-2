@@ -8,6 +8,7 @@ namespace KnapsackProblem.Startup.Core
 
         public int Weight { get; }
         public int Profit { get; }
+        public bool IsActive { get; set; }
         public double Value => Profit / Weight;
 
         #endregion
@@ -29,6 +30,7 @@ namespace KnapsackProblem.Startup.Core
 
             Weight = weight;
             Profit = profit;
+            IsActive = false;
         }
 
         #endregion
