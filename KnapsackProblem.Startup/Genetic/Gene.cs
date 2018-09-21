@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KnapsackProblem.Startup.Core.Genetic
+namespace KnapsackProblem.Startup.Genetic
 {
     public class Gene
     {
