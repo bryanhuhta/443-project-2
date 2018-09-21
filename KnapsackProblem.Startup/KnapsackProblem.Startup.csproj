@@ -45,13 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Chromosome.cs" />
-    <Compile Include="Core\Evolution\Gene\IContent.cs" />
-    <Compile Include="Core\Evolution\Gene\IGene.cs" />
-    <Compile Include="Core\Evolution\Gene\KnapsackContent.cs" />
-    <Compile Include="Core\Evolution\Gene\SimpleGene.cs" />
-    <Compile Include="Core\Generation\Operation\IMutate.cs" />
-    <Compile Include="Core\Generation\Operation\SimpleMutate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +52,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
