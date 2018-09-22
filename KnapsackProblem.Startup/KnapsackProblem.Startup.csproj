@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ArtemisaKnapsackReader.cs" />
-    <Compile Include="Core\ChromosomeGenerator.cs" />
+    <Compile Include="Genetic\ChromosomeGenerator.cs" />
     <Compile Include="Core\IKnapsackReader.cs" />
     <Compile Include="Core\Repository.cs" />
     <Compile Include="Genetic\Chromosome.cs" />

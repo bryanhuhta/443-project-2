@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using KnapsackProblem.Startup.Genetic;
+using KnapsackProblem.Startup.Core;
 
-namespace KnapsackProblem.Startup.Core
+namespace KnapsackProblem.Startup.Genetic
 {
     public class ChromosomeGenerator
     {
