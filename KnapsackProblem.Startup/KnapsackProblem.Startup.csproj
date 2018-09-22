@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ChromosomeGenerator.cs" />
+    <Compile Include="Core\IKnapsackReader.cs" />
+    <Compile Include="Core\Repository.cs" />
     <Compile Include="Genetic\Chromosome.cs" />
     <Compile Include="Genetic\Gene.cs" />
     <Compile Include="Genetic\Knapsack.cs" />
@@ -55,8 +58,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
