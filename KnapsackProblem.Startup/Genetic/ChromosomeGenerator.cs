@@ -5,6 +5,9 @@ using KnapsackProblem.Startup.Core;
 
 namespace KnapsackProblem.Startup.Genetic
 {
+    /// <summary>
+    /// This class generates various randomized configurations of <see cref="Chromosome"/>.
+    /// </summary>
     public class ChromosomeGenerator
     {
         #region Private Fields
