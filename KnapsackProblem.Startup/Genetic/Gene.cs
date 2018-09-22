@@ -2,6 +2,9 @@
 
 namespace KnapsackProblem.Startup.Genetic
 {
+    /// <summary>
+    /// This class represents the characteristics of a gene.
+    /// </summary>
     public class Gene
     {
         #region Properties
@@ -16,11 +19,11 @@ namespace KnapsackProblem.Startup.Genetic
         #region Constructors
 
         /// <summary>
-        /// Instantiates a gene.
+        /// Creates an instance of a <see cref="Gene"/>.
         /// </summary>
-        /// <param name="weight">Gene weight.</param>
-        /// <param name="profit">Gene profit.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Weight is less than 1.</exception>
+        /// <param name="weight"><see cref="Gene"/> weight.</param>
+        /// <param name="profit"><see cref="Gene"/> profit.</param>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="weight"/> is less than 1.</exception>
         public Gene(int weight, int profit)
         {
             if (weight < 1)
