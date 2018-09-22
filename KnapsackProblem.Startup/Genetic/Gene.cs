@@ -39,7 +39,7 @@ namespace KnapsackProblem.Startup.Genetic
 
         public override string ToString()
         {
-            return $"[ {Weight} {Profit} => {Value}";
+            return $"[ Weight: {Weight}, Profit: {Profit}, Value: {Value} ]";
         }
 
         #endregion
