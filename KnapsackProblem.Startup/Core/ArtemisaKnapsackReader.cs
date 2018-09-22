@@ -5,21 +5,24 @@ using KnapsackProblem.Startup.Genetic;
 
 namespace KnapsackProblem.Startup.Core
 {
+    /// <summary>
+    /// This class implements <see cref="IKnapsackReader"/>.
+    /// </summary>
     public class ArtemisaKnapsackReader : IKnapsackReader
     {
         #region Private Fields
 
-        private string _file;
+        private readonly string _file;
 
         #endregion
 
         #region Constructor
 
         /// <summary>
-        /// Creates an instance of ArtemisaKnapsackReader.
+        /// Creates an instance of <see cref="ArtemisaKnapsackReader"/>.
         /// </summary>
-        /// <param name="file">Name of the file from which to read.</param>
-        /// <exception cref="ArgumentException">File name is null.</exception>
+        /// <param name="file">The file from which to read.</param>
+        /// <exception cref="ArgumentException"><paramref name="file"/> is null.</exception>
         public ArtemisaKnapsackReader(string file)
         {
             _file = file ?? throw new ArgumentException($"{nameof(file)} cannot be null.");
@@ -30,9 +33,9 @@ namespace KnapsackProblem.Startup.Core
         #region Public Methods
 
         /// <summary>
-        /// Reads list of genes from a file.
+        /// Reads a list of genes from a file.
         /// </summary>
-        /// <returns>The list of genes.</returns>
+        /// <returns>The list of <see cref="Gene"/>.</returns>
         public List<Gene> GetGenes()
         {
             var genes = new List<Gene>();
@@ -67,9 +70,9 @@ namespace KnapsackProblem.Startup.Core
         }
 
         /// <summary>
-        /// Reads the knapsack configuration from a file.
+        /// Reads the <see cref="Knapsack"/> configuration from a file.
         /// </summary>
-        /// <returns>The knapsack configuration.</returns>
+        /// <returns>The <see cref="Knapsack"/> configuration.</returns>
         public Knapsack GetKnapsack()
         {
             using (var stream = new StreamReader(_file))
