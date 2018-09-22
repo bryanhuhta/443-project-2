@@ -31,5 +31,14 @@ namespace KnapsackProblem.Startup.Genetic
         }
 
         #endregion
+
+        #region Public Methods
+
+        public override string ToString()
+        {
+            return $"[ Capacity: {Capacity} ]";
+        }
+
+        #endregion
     }
 }
