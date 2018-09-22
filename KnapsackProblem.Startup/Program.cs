@@ -1,4 +1,9 @@
-﻿namespace KnapsackProblem.Startup
+﻿using System;
+using System.Configuration;
+using System.Diagnostics;
+using KnapsackProblem.Startup.Core;
+
+namespace KnapsackProblem.Startup
 {
     public class Program
     {
@@ -7,6 +12,33 @@
 
         public static void Main(string[] args)
         {
+            log4net.Config.XmlConfigurator.Configure();
+            
+            var stopwatch = Stopwatch.StartNew();
+            try
+            {
+                var dataFile = ConfigurationManager.AppSettings["dataFile"];
+                Log.Info($"Data file is: [ {dataFile} ]");
+
+                var repository = new Repository(new ArtemisaKnapsackReader(dataFile));
+                LogRepository(repository);
+            }
+            catch (Exception e)
+            {
+                Log.Fatal(e);
+                return;
+            }
+            stopwatch.Stop();
+
+            Log.Info($"Elapsed time: {stopwatch.Elapsed.TotalSeconds}.");
+        }
+
+        private static void LogRepository(Repository repository)
+        {
+            Log.Info("Knapsack:");
+
+            Log.Info("Genes:");
+            
         }
     }
 }
