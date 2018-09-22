@@ -8,7 +8,7 @@ namespace KnapsackProblem.Startup.Genetic
     public class ChromosomeGenerator
     {
         #region Private Fields
-
+        
         private readonly Random _random;
         private readonly Repository _repository;
 
@@ -17,9 +17,9 @@ namespace KnapsackProblem.Startup.Genetic
         #region Constructors
 
         /// <summary>
-        /// Instantiates a ChromosomeGenerator.
+        /// Creates an instance of <see cref="ChromosomeGenerator"/>.
         /// </summary>
-        /// <param name="repository">A repository of genes and knapsack.</param>
+        /// <param name="repository">A <see cref="Repository"/>.</param>
         public ChromosomeGenerator(Repository repository)
         {
             _random = new Random();
@@ -31,9 +31,9 @@ namespace KnapsackProblem.Startup.Genetic
         #region Public Methods
 
         /// <summary>
-        /// Builds a chromosome with randomized genes.
+        /// Builds a <see cref="Chromosome"/> with randomized genes.
         /// </summary>
-        /// <returns>A chromosome with random genes.</returns>
+        /// <returns>A <see cref="Chromosome"/> with random genes.</returns>
         public Chromosome GenerateRandomChromosome()
         {
             var genes = _repository.Genes;
