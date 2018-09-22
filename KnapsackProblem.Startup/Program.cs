@@ -18,7 +18,7 @@ namespace KnapsackProblem.Startup
             try
             {
                 var dataFile = ConfigurationManager.AppSettings["dataFile"];
-                Log.Info($"Data file is: [ {dataFile} ]");
+                Log.Info($"Data file: [ {dataFile} ]");
 
                 var repository = new Repository(new ArtemisaKnapsackReader(dataFile));
                 LogRepository(repository);
@@ -36,9 +36,13 @@ namespace KnapsackProblem.Startup
         private static void LogRepository(Repository repository)
         {
             Log.Info("Knapsack:");
+            Log.Info($"\t{repository.Knapsack}");
 
             Log.Info("Genes:");
-            
+            foreach (var gene in repository.Genes)
+            {
+                Log.Info($"\t{gene}");
+            }
         }
     }
 }
