@@ -52,6 +52,7 @@
     <Compile Include="Core\Repository.cs" />
     <Compile Include="Genetic\Chromosome.cs" />
     <Compile Include="Genetic\Gene.cs" />
+    <Compile Include="Genetic\Generation.cs" />
     <Compile Include="Genetic\Knapsack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
