@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ArtemisaKnapsackReader.cs" />
     <Compile Include="Core\ChromosomeGenerator.cs" />
     <Compile Include="Core\IKnapsackReader.cs" />
     <Compile Include="Core\Repository.cs" />
