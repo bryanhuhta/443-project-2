@@ -2,6 +2,9 @@
 
 namespace KnapsackProblem.Startup.Genetic
 {
+    /// <summary>
+    /// This class represents the contents of a knapsack.
+    /// </summary>
     public class Knapsack
     {
         #region Properties
