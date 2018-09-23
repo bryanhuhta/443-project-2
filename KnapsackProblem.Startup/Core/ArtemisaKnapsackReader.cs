@@ -44,6 +44,7 @@ namespace KnapsackProblem.Startup.Core
             {
                 // Check how many rows to read.
                 var count = ReadTuple(stream.ReadLine()).Item1;
+                var id = 0;
 
                 while (!stream.EndOfStream)
                 {
@@ -52,11 +53,12 @@ namespace KnapsackProblem.Startup.Core
 
                     if (tokens.Length != 2)
                     {
-                        
+                        throw new IOException($"Found {tokens.Length} tokens, expected 2.");
                     }
 
                     // Add the gene.
-                    genes.Add(new Gene(int.Parse(tokens[1]), int.Parse(tokens[0])));
+                    genes.Add(new Gene(id, int.Parse(tokens[1]), int.Parse(tokens[0])));
+                    ++id;
                 }
 
                 // Verify appropriate number of rows were read.
