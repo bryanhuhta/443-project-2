@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using KnapsackProblem.Startup.Core;
 
-namespace KnapsackProblem.Startup.Genetic
+namespace KnapsackProblem.Startup.Genetic.Internal
 {
     /// <summary>
     /// This class generates various randomized configurations of <see cref="Chromosome"/>.
     /// </summary>
-    public class ChromosomeGenerator
+    internal class ChromosomeGenerator
     {
         #region Private Fields
         

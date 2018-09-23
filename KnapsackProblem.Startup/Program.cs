@@ -25,7 +25,6 @@ namespace KnapsackProblem.Startup
 
                 // TODO: Create a 'generation' to encapsulate a set of chromosomes.
                 // TODO: Give a chromosome a 'fitness'.
-                // TODO: Fix Gene.Value truncating the division.
             }
             catch (Exception e)
             {
