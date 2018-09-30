@@ -29,8 +29,9 @@ namespace KnapsackProblem.Startup
                 var repository = new Repository(new ArtemisaKnapsackReader(dataFile));
                 Log(repository);
 
-                var chromosomeGenerator = new ChromosomeGenerator();
-                var generation = CreateRandomGeneration(chromosomeGenerator, repository, generationSize);
+                var generationManager = new GenerationManager(generationSize);
+
+                var generation = generationManager.CreateRandom(repository.Genes, repository.Knapsack);
                 Log(generation);
             }
             catch (Exception e)
@@ -46,18 +47,6 @@ namespace KnapsackProblem.Startup
         private static void Log(ILogMessage message)
         {
             message.Log();
-        }
-
-        private static Generation CreateRandomGeneration(ChromosomeGenerator generator, Repository repository, int size)
-        {
-            var generation = new Generation();
-
-            for (var i = 0; i < size; i++)
-            {
-                generation.Chromosomes.Add(generator.GenerateRandom(repository.Genes, repository.Knapsack));
-            }
-
-            return generation;
         }
     }
 }

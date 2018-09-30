@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Core\ArtemisaKnapsackReader.cs" />
     <Compile Include="Genetic\ChromosomeGenerator.cs" />
+    <Compile Include="Genetic\GenerationManager.cs" />
     <Compile Include="Genetic\Internal\ChromosomeGenerator.cs" />
     <Compile Include="Core\IKnapsackReader.cs" />
     <Compile Include="Core\Repository.cs" />
