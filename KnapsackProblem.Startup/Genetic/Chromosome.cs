@@ -29,8 +29,8 @@ namespace KnapsackProblem.Startup.Genetic
         /// <summary>
         /// Fitness algorithm for this <see cref="Chromosome"/>.
         /// </summary>
-        public IFitness Fitness;
-
+        public decimal Fitness => new SimpleFitness().GetFitness(this);
+        
         #endregion
 
         #region Constructors
@@ -47,10 +47,10 @@ namespace KnapsackProblem.Startup.Genetic
         #endregion
 
         #region Public Methods
-
+        
         public override string ToString()
         {
-            return $"[ Total weight: {Weight}, Total profit: {Profit} ]";
+            return $"[ Total weight: {Weight}, Total profit: {Profit}, Fitness: {Fitness} ]";
         }
 
         #endregion

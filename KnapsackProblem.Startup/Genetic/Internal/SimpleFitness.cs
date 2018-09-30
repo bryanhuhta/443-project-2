@@ -16,7 +16,7 @@ namespace KnapsackProblem.Startup.Genetic.Internal
         /// <returns>The fitness of <paramref name="chromosome"/>.</returns>
         public decimal GetFitness(Chromosome chromosome)
         {
-            return chromosome.Genes.Sum(gene => gene.Value);
+            return chromosome.Genes.Where(gene => gene.IsActive).Sum(gene => gene.Value);
         }
 
         #endregion

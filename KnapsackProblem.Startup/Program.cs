@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using KnapsackProblem.Startup.Core;
 using KnapsackProblem.Startup.Genetic;
+using KnapsackProblem.Startup.Genetic.Internal;
+using ChromosomeGenerator = KnapsackProblem.Startup.Genetic.ChromosomeGenerator;
 
 namespace KnapsackProblem.Startup
 {
@@ -16,26 +17,20 @@ namespace KnapsackProblem.Startup
         {
             log4net.Config.XmlConfigurator.Configure();
             
-            var stopwatch = Stopwatch.StartNew();
+            var totalTime = Stopwatch.StartNew();
             try
             {
                 var dataFile = ConfigurationManager.AppSettings["dataFile"];
                 Logger.Info($"Data file: [ {dataFile} ]");
 
+                var generationSize = int.Parse(ConfigurationManager.AppSettings["generationSize"]);
+                Logger.Info($"Generation size: [ {generationSize} ]");
+
                 var repository = new Repository(new ArtemisaKnapsackReader(dataFile));
                 Log(repository);
 
                 var chromosomeGenerator = new ChromosomeGenerator();
-                var generation = new Generation();
-
-                // Add 10 chromosomes to a generation.
-                for (var i = 0; i < 10; i++)
-                {
-                    var newChromosome = chromosomeGenerator.GenerateRandom(repository.Genes, repository.Knapsack);
-                    Logger.Debug(newChromosome);
-
-                    generation.Chromosomes.Add(newChromosome);
-                }
+                var generation = CreateRandomGeneration(chromosomeGenerator, repository, generationSize);
                 Log(generation);
             }
             catch (Exception e)
@@ -43,26 +38,26 @@ namespace KnapsackProblem.Startup
                 Logger.Fatal(e);
                 return;
             }
-            stopwatch.Stop();
+            totalTime.Stop();
 
-            Logger.Info($"Elapsed time: {stopwatch.Elapsed.TotalSeconds}.");
+            Logger.Info($"Elapsed time: {totalTime.Elapsed.TotalSeconds}.");
         }
-
-        private static void LogRepository(Repository repository)
-        {
-            Logger.Info("Knapsack:");
-            Logger.Info($"\t{repository.Knapsack}");
-
-            Logger.Info("Genes:");
-            foreach (var gene in repository.Genes)
-            {
-                Logger.Info($"\t{gene}");
-            }
-        }
-
+        
         private static void Log(ILogMessage message)
         {
             message.Log();
+        }
+
+        private static Generation CreateRandomGeneration(ChromosomeGenerator generator, Repository repository, int size)
+        {
+            var generation = new Generation();
+
+            for (var i = 0; i < size; i++)
+            {
+                generation.Chromosomes.Add(generator.GenerateRandom(repository.Genes, repository.Knapsack));
+            }
+
+            return generation;
         }
     }
 }
