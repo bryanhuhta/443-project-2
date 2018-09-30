@@ -5,8 +5,15 @@ namespace KnapsackProblem.Startup.Genetic
     /// <summary>
     /// This class represents the contents of a knapsack.
     /// </summary>
-    public class Knapsack
+    public class Knapsack : ILogMessage
     {
+        #region Private Fields
+
+        private static readonly log4net.ILog Logger =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -40,6 +47,12 @@ namespace KnapsackProblem.Startup.Genetic
         public override string ToString()
         {
             return $"[ Capacity: {Capacity} ]";
+        }
+
+        public void Log()
+        {
+            Logger.Debug("Knapsack");
+            Logger.Debug($"\t{Capacity}");
         }
 
         #endregion

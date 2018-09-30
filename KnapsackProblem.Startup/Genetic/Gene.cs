@@ -5,7 +5,7 @@ namespace KnapsackProblem.Startup.Genetic
     /// <summary>
     /// This class represents the characteristics of a gene.
     /// </summary>
-    public class Gene
+    public class Gene : ICloneable
     {
         #region Properties
 
@@ -46,6 +46,11 @@ namespace KnapsackProblem.Startup.Genetic
         public override string ToString()
         {
             return $"[ Id: {Id}, Weight: {Weight}, Profit: {Profit}, Value: {Value} ]";
+        }
+
+        public object Clone()
+        {
+            return new Gene(Id, Weight, Profit);
         }
 
         #endregion

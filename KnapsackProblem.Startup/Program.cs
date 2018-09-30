@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using KnapsackProblem.Startup.Core;
+using KnapsackProblem.Startup.Genetic;
 
 namespace KnapsackProblem.Startup
 {
     public class Program
     {
-        private static readonly log4net.ILog Log =
+        private static readonly log4net.ILog Logger =
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public static void Main(string[] args)
@@ -18,35 +20,49 @@ namespace KnapsackProblem.Startup
             try
             {
                 var dataFile = ConfigurationManager.AppSettings["dataFile"];
-                Log.Info($"Data file: [ {dataFile} ]");
+                Logger.Info($"Data file: [ {dataFile} ]");
 
                 var repository = new Repository(new ArtemisaKnapsackReader(dataFile));
-                LogRepository(repository);
+                Log(repository);
 
-                // TODO: Create a generation generator
-                // TODO:    1st gen 100% random
-                // TODO:    2nd gen is produced from previous
+                var chromosomeGenerator = new ChromosomeGenerator();
+                var generation = new Generation();
+
+                // Add 10 chromosomes to a generation.
+                for (var i = 0; i < 10; i++)
+                {
+                    var newChromosome = chromosomeGenerator.GenerateRandom(repository.Genes, repository.Knapsack);
+                    Logger.Debug(newChromosome);
+
+                    generation.Chromosomes.Add(newChromosome);
+                }
+                Log(generation);
             }
             catch (Exception e)
             {
-                Log.Fatal(e);
+                Logger.Fatal(e);
                 return;
             }
             stopwatch.Stop();
 
-            Log.Info($"Elapsed time: {stopwatch.Elapsed.TotalSeconds}.");
+            Logger.Info($"Elapsed time: {stopwatch.Elapsed.TotalSeconds}.");
         }
 
         private static void LogRepository(Repository repository)
         {
-            Log.Info("Knapsack:");
-            Log.Info($"\t{repository.Knapsack}");
+            Logger.Info("Knapsack:");
+            Logger.Info($"\t{repository.Knapsack}");
 
-            Log.Info("Genes:");
+            Logger.Info("Genes:");
             foreach (var gene in repository.Genes)
             {
-                Log.Info($"\t{gene}");
+                Logger.Info($"\t{gene}");
             }
+        }
+
+        private static void Log(ILogMessage message)
+        {
+            message.Log();
         }
     }
 }
