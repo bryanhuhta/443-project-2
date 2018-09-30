@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using KnapsackProblem.Startup.Genetic.Internal;
 
 namespace KnapsackProblem.Startup.Genetic
 {
@@ -24,6 +25,11 @@ namespace KnapsackProblem.Startup.Genetic
         /// The total profit of this <see cref="Chromosome"/>.
         /// </summary>
         public int Profit => Genes.Where(gene => gene.IsActive).Sum(gene => gene.Profit);
+
+        /// <summary>
+        /// Fitness algorithm for this <see cref="Chromosome"/>.
+        /// </summary>
+        public IFitness Fitness;
 
         #endregion
 

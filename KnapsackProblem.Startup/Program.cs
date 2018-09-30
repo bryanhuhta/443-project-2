@@ -23,8 +23,9 @@ namespace KnapsackProblem.Startup
                 var repository = new Repository(new ArtemisaKnapsackReader(dataFile));
                 LogRepository(repository);
 
-                // TODO: Create a 'generation' to encapsulate a set of chromosomes.
-                // TODO: Give a chromosome a 'fitness'.
+                // TODO: Create a generation generator
+                // TODO:    1st gen 100% random
+                // TODO:    2nd gen is produced from previous
             }
             catch (Exception e)
             {
