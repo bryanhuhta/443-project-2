@@ -28,9 +28,9 @@ namespace KnapsackProblem.Startup.Genetic
 
         #region Public Methods
 
-        public Generation CreateRandom(List<Gene> genes, Knapsack knapsack)
+        public Generation CreateRandom(int id, List<Gene> genes, Knapsack knapsack)
         {
-            var generation = new Generation();
+            var generation = new Generation(id);
 
             for (var i = 0; i < Size; i++)
             {
@@ -39,7 +39,7 @@ namespace KnapsackProblem.Startup.Genetic
 
             return generation;
         }
-
+        
         #endregion
     }
 }

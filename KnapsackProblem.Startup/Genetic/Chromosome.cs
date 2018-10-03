@@ -7,7 +7,7 @@ namespace KnapsackProblem.Startup.Genetic
     /// <summary>
     /// This class encapsulates active and inactive <see cref="Gene"/> instances and the data associated with them.
     /// </summary>
-    public class Chromosome
+    public class Chromosome : IExport
     {
         #region Properties
 
@@ -51,6 +51,16 @@ namespace KnapsackProblem.Startup.Genetic
         public override string ToString()
         {
             return $"[ Total weight: {Weight}, Total profit: {Profit}, Fitness: {Fitness} ]";
+        }
+
+        public List<string> Export()
+        {
+            var elements = Genes.Select(gene => gene.IsActive ? "1" : "0").ToList();
+            elements.Add(Weight.ToString());
+            elements.Add(Profit.ToString());
+            elements.Add(Fitness.ToString());
+
+            return elements;
         }
 
         #endregion

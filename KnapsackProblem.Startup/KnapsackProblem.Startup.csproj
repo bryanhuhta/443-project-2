@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ArtemisaKnapsackReader.cs" />
+    <Compile Include="Core\Csv.cs" />
     <Compile Include="Genetic\ChromosomeGenerator.cs" />
     <Compile Include="Genetic\GenerationManager.cs" />
     <Compile Include="Genetic\Internal\ChromosomeGenerator.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Genetic\Internal\IFitness.cs" />
     <Compile Include="Genetic\Internal\SimpleFitness.cs" />
     <Compile Include="Genetic\Knapsack.cs" />
+    <Compile Include="IExport.cs" />
     <Compile Include="ILogMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
